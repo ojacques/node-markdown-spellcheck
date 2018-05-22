@@ -18,6 +18,7 @@ exports.default = function (src) {
     tracker.replaceAll(jekyllFrontMatter, " ");
   }
 
+  tracker.replaceAll(/\<div class=\"[Mm]ermaid\".*\<\/div\>/s, " "); // ignore Mermaid diagrams
   tracker.removeAll(/```[\w\W]*?```/);
   tracker.removeAll(/~~~[\w\W]*?~~~/);
   tracker.removeAll(/``[\w\W]*?``/);
